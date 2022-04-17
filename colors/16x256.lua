@@ -16,9 +16,10 @@ vim.g.colors_name = "16x256"
 ----------------------------
 
 vim.cmd [[
-  highlight Search ctermfg=16
-  highlight VertSplit cterm=none
-  highlight Visual ctermfg=231
+  highlight Search     ctermfg=16
+  highlight SignColumn ctermbg=none
+  highlight VertSplit  cterm=none
+  highlight Visual     ctermfg=231
 ]]
 
 ------------------
