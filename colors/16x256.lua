@@ -3,6 +3,7 @@
 -------------------
 
 vim.opt.background = "dark"
+vim.opt.termguicolors = false
 
 vim.cmd [[
   highlight clear
@@ -11,29 +12,28 @@ vim.cmd [[
 
 vim.g.colors_name = "16x256"
 
+function hl(group, colors)
+  vim.api.nvim_set_hl(0, group, colors)
+end
+
+
 ----------------------------
 -- User Interface Objects --
 ----------------------------
 
-vim.cmd [[
-  highlight Search     ctermfg=16
-  highlight SignColumn ctermbg=none
-  highlight VertSplit  cterm=none
-  highlight Visual     ctermfg=231
-]]
+hl("Search",     { ctermfg = 16, ctermbg = 11 })
+hl("SignColumn", { ctermfg = 14, ctermbg = none })
+hl("VertSplit",  { reverse = false })
+hl("Visual",     { ctermfg = 231, ctermbg = 242 })
 
 ------------------
 -- Text Objects --
 ------------------
 
-vim.cmd [[
-  highlight MatchParen ctermbg=none cterm=underline
-]]
+hl("MatchParen", { ctermbg = none, underline = true })
 
 ---------------------
 -- Plugin Specific --
 ---------------------
 
-vim.cmd [[
-  highlight NvimTreeFolderIcon ctermfg=blue
-]]
+hl("NvimTreeFolderIcon", { ctermfg = 12 })
