@@ -19,33 +19,35 @@ end
 ---------------------
 -- Color Variables --
 ---------------------
-local fg_black = 16  -- #000000
-local fg_white = 231 -- #ffffff
+local black = 16  -- #000000
+local grey  = 242
+local white = 231 -- #ffffff
 
-local fg_red     = 9  -- Bright Red
-local fg_green   = 10 -- Bright Green
-local fg_yellow  = 11 -- Bright Yellow
-local fg_blue    = 12 -- Bright Blue
-local fg_magenta = 13 -- Bright Magenta
-local fg_cyan    = 14 -- Bright Cyan
+local dark_red     = 1 -- Dark Red
+local dark_green   = 2 -- Dark Green
+local dark_yellow  = 3 -- Dark Yellow
+local dark_blue    = 4 -- Dark Blue
+local dark_magenta = 5 -- Dark Magenta
+local dark_cyan    = 6 -- Dark Cyan
 
-local bg_grey = 242
-
-local bg_red     = 1 -- Dark Red
-local bg_green   = 2 -- Dark Green
-local bg_yellow  = 3 -- Dark Yellow
-local bg_blue    = 4 -- Dark Blue
-local bg_magenta = 5 -- Dark Magenta
-local bg_cyan    = 6 -- Dark Cyan
+local bright_red     = 9  -- Bright Red
+local bright_green   = 10 -- Bright Green
+local bright_yellow  = 11 -- Bright Yellow
+local bright_blue    = 12 -- Bright Blue
+local bright_magenta = 13 -- Bright Magenta
+local bright_cyan    = 14 -- Bright Cyan
 
 ----------------------------
 -- User Interface Objects --
 ----------------------------
 
-hl("Search",     { ctermfg = fg_black, ctermbg = bg_yellow })
-hl("SignColumn", { ctermfg = fg_cyan,  ctermbg = none })
+hl("Search",     { ctermfg = black, ctermbg = dark_yellow })
+hl("SignColumn", { ctermfg = bright_cyan, ctermbg = none })
 hl("VertSplit",  { reverse = false })
-hl("Visual",     { ctermfg = fg_white, ctermbg = bg_grey })
+hl("Visual",     { ctermfg = white, ctermbg = grey })
+
+hl("CursorLineNr", { ctermfg = bright_red, underline = false })
+hl("LineNr",       { ctermfg = grey })
 
 ------------------
 -- Text Objects --
@@ -57,4 +59,4 @@ hl("MatchParen", { ctermbg = none, underline = true })
 -- Plugin Specific --
 ---------------------
 
-hl("NvimTreeFolderIcon", { ctermfg = fg_blue })
+hl("NvimTreeFolderIcon", { ctermfg = bright_blue })
