@@ -41,26 +41,37 @@ local bright_magenta = 13
 local bright_cyan    = 14
 local bright_white   = 15
 
-----------------------------
--- User Interface Objects --
-----------------------------
+---------------------
+-- Highlight Rules --
+---------------------
 
+hl("MatchParen", { ctermbg = none, underline = true })
 hl("Search",     { ctermfg = black, ctermbg = dark_yellow })
 hl("SignColumn", { ctermfg = bright_cyan, ctermbg = none })
+hl("Todo",       { ctermfg = bright_cyan, underline = true })
 hl("VertSplit",  { reverse = false })
 hl("Visual",     { ctermfg = white, ctermbg = grey })
 
 hl("CursorLineNr", { ctermfg = bright_red, underline = false })
 hl("LineNr",       { ctermfg = bright_black })
 
-------------------
--- Text Objects --
-------------------
+--------------------
+-- Filetype: diff --
+--------------------
 
-hl("MatchParen", { ctermbg = none, underline = true })
+-- Highlight filetype 'diff' similar to 'git diff' output.
+-- FIXME: Rewrite...
+vim.cmd [[
+  highlight link diffFile      NONE
+  highlight link diffIndexLine NONE
+  highlight link diffSubname   NONE
+  highlight diffAdded   ctermfg=green
+  highlight diffLine    ctermfg=cyan
+  highlight diffRemoved ctermfg=red
+]]
 
----------------------
--- Plugin Specific --
----------------------
+---------------------------
+-- Plugin: nvim-tree.lua --
+---------------------------
 
 hl("NvimTreeFolderIcon", { ctermfg = bright_blue })
