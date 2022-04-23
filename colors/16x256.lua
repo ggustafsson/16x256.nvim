@@ -20,7 +20,7 @@ end
 -- Color Variables --
 ---------------------
 local black = 16  -- #000000
-local grey  = 242
+local grey  = 240
 local white = 231 -- #ffffff
 
 local dark_black   = 0
@@ -54,6 +54,9 @@ hl("Visual",     { ctermfg = white, ctermbg = grey })
 
 hl("CursorLineNr", { ctermfg = bright_red, underline = false })
 hl("LineNr",       { ctermfg = bright_black })
+
+hl("NonText",    { ctermfg = bright_black })
+hl("SpecialKey", { ctermfg = bright_black })
 
 --------------------
 -- Filetype: diff --
