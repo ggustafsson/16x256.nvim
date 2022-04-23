@@ -1,10 +1,9 @@
 -------------------
 -- Initial Setup --
 -------------------
-
 vim.opt.background = "dark"
-vim.opt.termguicolors = false
 
+-- XXX: I can't figure out how to do this without vim.cmd().
 vim.cmd [[
   highlight clear
   syntax reset
@@ -44,7 +43,6 @@ local bright_white   = 15
 ---------------------
 -- Highlight Rules --
 ---------------------
-
 hl("MatchParen", { ctermbg = none, underline = true })
 hl("Search",     { ctermfg = black, ctermbg = dark_yellow })
 hl("SignColumn", { ctermfg = bright_cyan, ctermbg = none })
@@ -61,20 +59,18 @@ hl("SpecialKey", { ctermfg = bright_black })
 --------------------
 -- Filetype: diff --
 --------------------
+hl("diffAdded",   { ctermfg = bright_green })
+hl("diffLine",    { ctermfg = bright_cyan })
+hl("diffRemoved", { ctermfg = bright_red })
 
--- Highlight filetype 'diff' similar to 'git diff' output.
--- FIXME: Rewrite...
+-- XXX: I can't figure out how to do this without vim.cmd().
 vim.cmd [[
   highlight link diffFile      NONE
   highlight link diffIndexLine NONE
   highlight link diffSubname   NONE
-  highlight diffAdded   ctermfg=green
-  highlight diffLine    ctermfg=cyan
-  highlight diffRemoved ctermfg=red
 ]]
 
 ---------------------------
 -- Plugin: nvim-tree.lua --
 ---------------------------
-
 hl("NvimTreeFolderIcon", { ctermfg = bright_blue })
