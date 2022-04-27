@@ -59,6 +59,9 @@ hl("Visual",     { ctermfg = static.white, ctermbg = static.grey })
 hl("CursorLineNr", { ctermfg = bright.red, underline = false })
 hl("LineNr",       { ctermfg = bright.black })
 
+hl("FoldColumn", { ctermfg = bright.cyan, ctermbg = static.grey })
+hl("Folded",     { ctermfg = bright.cyan, ctermbg = static.grey })
+
 hl("NonText",    { ctermfg = bright.black })
 hl("SpecialKey", { ctermfg = bright.black })
 
