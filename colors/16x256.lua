@@ -84,3 +84,4 @@ vim.cmd [[
 ---------------------------
 hl("NvimTreeFolderIcon", { ctermfg = bright.blue })
 hl("NvimTreeGitDirty",   { ctermfg = bright.yellow })
+hl("NvimTreeGitIgnored", { ctermfg = none })
