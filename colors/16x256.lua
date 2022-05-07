@@ -82,5 +82,5 @@ vim.cmd [[
 ---------------------------
 -- Plugin: nvim-tree.lua --
 ---------------------------
-hl("NvimTreeFileDirty",  { ctermfg = bright.yellow })
 hl("NvimTreeFolderIcon", { ctermfg = bright.blue })
+hl("NvimTreeGitDirty",   { ctermfg = bright.yellow })
