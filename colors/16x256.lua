@@ -78,9 +78,3 @@ vim.cmd [[
   highlight link diffIndexLine NONE
   highlight link diffSubname   NONE
 ]]
-
----------------------------
--- Plugin: nvim-tree.lua --
----------------------------
-hl("NvimTreeFolderIcon", { ctermfg = bright.blue })
-hl("NvimTreeGitDirty",   { ctermfg = bright.yellow })
