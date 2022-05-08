@@ -3,7 +3,6 @@
 -------------------
 vim.opt.background = "dark"
 
--- XXX: I can't figure out how to do this without vim.cmd().
 vim.cmd [[
   highlight clear
   syntax reset
@@ -12,7 +11,14 @@ vim.cmd [[
 vim.g.colors_name = "16x256"
 
 function hl(group, colors)
-  vim.api.nvim_set_hl(0, group, colors)
+  local args = {}
+  for key, value in pairs(colors) do
+    local arg = string.format("%s=%s", key, value)
+    table.insert(args, arg)
+  end
+  local string = table.concat(args, " ")
+  local command = string.format("highlight %s %s", group, string)
+  vim.cmd(command)
 end
 
 ---------------------
@@ -49,14 +55,14 @@ local bright = {
 ---------------------
 -- Highlight Rules --
 ---------------------
-hl("MatchParen", { ctermbg = none, underline = true })
+hl("MatchParen", { ctermbg = "none", cterm = "underline" })
 hl("Search",     { ctermfg = static.black, ctermbg = dark.yellow })
-hl("SignColumn", { ctermfg = bright.cyan, ctermbg = none })
-hl("Todo",       { ctermfg = bright.cyan, underline = true })
-hl("VertSplit",  { reverse = false })
+hl("SignColumn", { ctermfg = bright.cyan, ctermbg = "none" })
+hl("Todo",       { ctermfg = bright.cyan, ctermbg = "none", cterm = "underline" })
+hl("VertSplit",  { cterm = "none" })
 hl("Visual",     { ctermfg = static.white, ctermbg = static.grey })
 
-hl("CursorLineNr", { ctermfg = bright.red, underline = false })
+hl("CursorLineNr", { ctermfg = bright.red, cterm = "none" })
 hl("LineNr",       { ctermfg = bright.black })
 
 hl("FoldColumn", { ctermfg = bright.cyan, ctermbg = static.grey })
@@ -72,7 +78,6 @@ hl("diffAdded",   { ctermfg = bright.green })
 hl("diffLine",    { ctermfg = bright.cyan })
 hl("diffRemoved", { ctermfg = bright.red })
 
--- XXX: I can't figure out how to do this without vim.cmd().
 vim.cmd [[
   highlight link diffFile      NONE
   highlight link diffIndexLine NONE
