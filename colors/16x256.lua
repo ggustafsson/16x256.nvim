@@ -10,6 +10,14 @@ vim.cmd [[
 
 vim.g.colors_name = "16x256"
 
+-- Translate Lua table containing highlight group settings to valid Nvim
+-- highlight command and execute it with vim.cmd().
+--
+-- Input:
+--   hl("MatchParen", { ctermbg = "none", cterm = "underline" })
+--
+-- Output:
+--   highlight MatchParen ctermbg=none cterm=underline
 function hl(group, colors)
   local args = {}
   for key, value in pairs(colors) do
