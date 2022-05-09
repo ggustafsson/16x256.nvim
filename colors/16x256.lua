@@ -65,6 +65,12 @@ hl("Visual",     { ctermfg = static.white, ctermbg = static.grey })
 hl("CursorLineNr", { ctermfg = bright.red, cterm = "none" })
 hl("LineNr",       { ctermfg = bright.black })
 
+-- FIXME: Improve DiffChange and DiffText. Mimic GitHub?
+hl("DiffAdd",    { ctermfg = static.white, ctermbg = dark.green })
+hl("DiffChange", { ctermfg = static.white, ctermbg = dark.yellow })
+hl("DiffDelete", { ctermfg = static.white, ctermbg = dark.red })
+hl("DiffText",   { ctermfg = static.white, ctermbg = dark.red })
+
 hl("FoldColumn", { ctermfg = bright.cyan, ctermbg = static.grey })
 hl("Folded",     { ctermfg = bright.cyan, ctermbg = static.grey })
 
