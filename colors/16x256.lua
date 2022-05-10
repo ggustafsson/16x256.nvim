@@ -17,7 +17,7 @@ vim.g.colors_name = "16x256"
 --   hl("MatchParen", { ctermbg = "none", cterm = "underline" })
 --
 -- Output:
---   highlight MatchParen ctermbg=none cterm=underline
+--   vim.cmd("highlight MatchParen ctermbg=none cterm=underline")
 function hl(group, colors)
   local args = {}
   for key, value in pairs(colors) do
@@ -73,7 +73,6 @@ hl("Visual",     { ctermfg = static.white, ctermbg = static.grey })
 hl("CursorLineNr", { ctermfg = bright.red, cterm = "none" })
 hl("LineNr",       { ctermfg = bright.black })
 
--- FIXME: Improve DiffChange and DiffText. Mimic GitHub?
 hl("DiffAdd",    { ctermfg = static.white, ctermbg = dark.green })
 hl("DiffChange", { ctermfg = static.white, ctermbg = dark.yellow })
 hl("DiffDelete", { ctermfg = static.white, ctermbg = dark.red })
