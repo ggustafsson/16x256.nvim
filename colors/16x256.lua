@@ -96,10 +96,3 @@ vim.cmd [[
   highlight link diffIndexLine NONE
   highlight link diffSubname   NONE
 ]]
-
----------------------------
--- Plugin: gitsigns.nvim --
----------------------------
-hl("GitSignsAdd",    { ctermfg = bright.green })
-hl("GitSignsChange", { ctermfg = bright.yellow })
-hl("GitSignsDelete", { ctermfg = bright.red })
