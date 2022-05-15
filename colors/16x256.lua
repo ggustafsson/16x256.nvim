@@ -67,7 +67,6 @@ hl("MatchParen", { ctermbg = "none", cterm = "underline" })
 hl("Search",     { ctermfg = static.black, ctermbg = dark.yellow })
 hl("SignColumn", { ctermfg = bright.cyan, ctermbg = "none" })
 hl("Todo",       { ctermfg = bright.cyan, ctermbg = "none", cterm = "underline" })
-hl("VertSplit",  { cterm = "none" })
 hl("Visual",     { ctermfg = static.white, ctermbg = static.grey })
 
 hl("CursorLineNr", { ctermfg = bright.red, cterm = "none" })
