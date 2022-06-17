@@ -34,6 +34,7 @@ end
 ---------------------
 local static = {
   black = 16,  -- #000000
+  brown = 144, -- #afaf87
   grey  = 240,
   white = 231, -- #ffffff
 }
@@ -63,6 +64,7 @@ local bright = {
 ---------------------
 -- Highlight Rules --
 ---------------------
+hl("Comment",    { ctermfg = static.brown })
 hl("MatchParen", { ctermbg = "none", cterm = "underline" })
 hl("Search",     { ctermfg = static.black, ctermbg = dark.yellow })
 hl("SignColumn", { ctermfg = bright.cyan, ctermbg = "none" })
