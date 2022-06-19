@@ -68,7 +68,7 @@ hl("Comment",    { ctermfg = static.brown })
 hl("MatchParen", { ctermbg = "none", cterm = "underline" })
 hl("Search",     { ctermfg = static.black, ctermbg = dark.yellow })
 hl("SignColumn", { ctermfg = bright.cyan, ctermbg = "none" })
-hl("Todo",       { ctermfg = bright.cyan, ctermbg = "none", cterm = "underline" })
+hl("Todo",       { ctermfg = bright.yellow, ctermbg = "none", cterm = "underline" })
 hl("VertSplit",  { cterm = "none", ctermfg = static.white })
 hl("Visual",     { ctermfg = static.white, ctermbg = static.grey })
 
