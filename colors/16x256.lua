@@ -1,13 +1,30 @@
+-- 16x256.nvim - v0.0.1 WIP ALPHA BETA 2000
+--
+--     $$\   $$$$$$\             $$$$$$\  $$$$$$$\   $$$$$$\
+--   $$$$ | $$  __$$\           $$  __$$\ $$  ____| $$  __$$\
+--   \_$$ | $$ /  \__|$$\   $$\ \__/  $$ |$$ |      $$ /  \__|
+--     $$ | $$$$$$$\  \$$\ $$  | $$$$$$  |$$$$$$$\  $$$$$$$\
+--     $$ | $$  __$$\  \$$$$  / $$  ____/ \_____$$\ $$  __$$\
+--     $$ | $$ /  $$ | $$  $$<  $$ |      $$\   $$ |$$ /  $$ |
+--   $$$$$$\ $$$$$$  |$$  /\$$\ $$$$$$$$\ \$$$$$$  | $$$$$$  |
+--   \______|\______/ \__/  \__|\________| \______/  \______/
+--
+-- Nvim colorscheme that aims to be minimal, defaultish and wonderfully boring.
+--
+-- XXX: This will be hopefully be decommisioned after Nvim v9.0!
+-- See roadmap: https://neovim.io/roadmap
+--
+-- Author: Göran Gustafsson (gustafsson.g at gmail.com)
+-- License: BSD 3-Clause
+
 -------------------
 -- Initial Setup --
 -------------------
 vim.opt.background = "dark"
-
 vim.cmd [[
   highlight clear
   syntax reset
 ]]
-
 vim.g.colors_name = "16x256"
 
 -- Translate Lua table containing highlight group settings to valid Nvim
@@ -34,11 +51,10 @@ end
 ---------------------
 local static = {
   black = 16,  -- #000000
-  brown = 144, -- #afaf87
   grey  = 240,
+  tan   = 180, -- #d7af87
   white = 231, -- #ffffff
 }
-
 local dark = {
   black   = 0,
   red     = 1,
@@ -49,7 +65,6 @@ local dark = {
   cyan    = 6,
   white   = 7,
 }
-
 local bright = {
   black   = 8,
   red     = 9,
@@ -67,26 +82,36 @@ local bright = {
 hl("MatchParen", { ctermbg = "none", cterm = "underline" })
 hl("Search",     { ctermfg = static.black, ctermbg = dark.yellow })
 hl("SignColumn", { ctermfg = bright.cyan, ctermbg = "none" })
-hl("Todo",       { ctermfg = bright.yellow, ctermbg = "none", cterm = "underline" })
 hl("VertSplit",  { cterm = "none", ctermfg = static.white })
 hl("Visual",     { ctermfg = static.white, ctermbg = static.grey })
 
-hl("Comment",         { ctermfg = static.brown })
-hl("vimCommentTitle", { ctermfg = static.brown })
+hl("Comment", { ctermfg = static.tan })
+vim.cmd [[
+  highlight! link Todo            Comment
+  highlight! link vimCommentTitle Comment
+]]
 
 hl("CursorLineNr", { ctermfg = bright.red, cterm = "none" })
 hl("LineNr",       { ctermfg = bright.black })
 
-hl("DiffAdd",    { ctermfg = static.white, ctermbg = dark.green })
-hl("DiffChange", { ctermfg = static.white, ctermbg = dark.yellow })
-hl("DiffDelete", { ctermfg = static.white, ctermbg = dark.red })
-hl("DiffText",   { ctermfg = static.white, ctermbg = dark.red })
+hl("DiffAdd",    { ctermfg = static.black, ctermbg = dark.green })
+hl("DiffChange", { ctermfg = static.black, ctermbg = dark.yellow })
+hl("DiffDelete", { ctermfg = static.black, ctermbg = dark.red })
+hl("DiffText",   { ctermfg = static.black, ctermbg = dark.red })
 
-hl("FoldColumn", { ctermfg = bright.cyan, ctermbg = static.grey })
-hl("Folded",     { ctermfg = bright.cyan, ctermbg = static.grey })
+hl("Error", { ctermfg = static.white, ctermbg = dark.red })
+vim.cmd("highlight! link ErrorMsg Error")
 
-hl("NonText",    { ctermfg = bright.black })
-hl("SpecialKey", { ctermfg = bright.black })
+hl("Folded", { ctermfg = bright.cyan, ctermbg = static.grey })
+vim.cmd("highlight! link FoldColumn Folded")
+
+hl("NonText", { ctermfg = bright.black })
+vim.cmd("highlight! link SpecialKey NonText")
+
+hl("SpellBad",   { ctermfg = static.white, ctermbg = dark.red })
+hl("SpellCap",   { ctermfg = static.white, ctermbg = dark.blue })
+hl("SpellLocal", { ctermfg = static.white, ctermbg = dark.cyan })
+hl("SpellRare",  { ctermfg = static.white, ctermbg = dark.magenta })
 
 --------------------
 -- Filetype: diff --
