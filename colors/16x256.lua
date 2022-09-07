@@ -14,7 +14,7 @@
 -- XXX: This will be hopefully be decommisioned after Nvim v9.0!
 -- See roadmap: https://neovim.io/roadmap
 --
--- Author: Göran Gustafsson (gustafsson.g at gmail.com)
+-- Author: Göran Gustafsson <gustafsson.g@gmail.com>
 -- License: BSD 3-Clause
 
 -------------------
