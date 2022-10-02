@@ -1,4 +1,4 @@
--- 16x256.nvim - v0.0.1 WIP ALPHA BETA 2000
+-- 16x256.nvim - v0.0.2 WIP ALPHA BETA 2000
 --
 --     $$\   $$$$$$\             $$$$$$\  $$$$$$$\   $$$$$$\
 --   $$$$ | $$  __$$\           $$  __$$\ $$  ____| $$  __$$\
@@ -11,7 +11,7 @@
 --
 -- Nvim colorscheme that aims to be minimal, defaultish and wonderfully boring.
 --
--- XXX: This will be hopefully be decommisioned after Nvim v9.0!
+-- XXX: This will be hopefully be decommisioned after Nvim v0.9.0!
 -- See roadmap: https://neovim.io/roadmap
 --
 -- Author: Göran Gustafsson <gustafsson.g@gmail.com>
@@ -79,17 +79,15 @@ local bright = {
 ---------------------
 -- Highlight Rules --
 ---------------------
+hl("Comment",    { ctermfg = static.tan })
+hl("Error",      { ctermfg = static.white, ctermbg = dark.red })
+hl("Folded",     { ctermfg = bright.cyan, ctermbg = static.grey })
 hl("MatchParen", { ctermbg = "none", cterm = "underline" })
+hl("NonText",    { ctermfg = bright.black })
 hl("Search",     { ctermfg = static.black, ctermbg = dark.yellow })
 hl("SignColumn", { ctermfg = bright.cyan, ctermbg = "none" })
 hl("VertSplit",  { cterm = "none", ctermfg = static.white })
 hl("Visual",     { ctermfg = static.white, ctermbg = static.grey })
-
-hl("Comment", { ctermfg = static.tan })
-vim.cmd [[
-  highlight! link Todo            Comment
-  highlight! link vimCommentTitle Comment
-]]
 
 hl("CursorLineNr", { ctermfg = bright.red, cterm = "none" })
 hl("LineNr",       { ctermfg = bright.black })
@@ -99,19 +97,20 @@ hl("DiffChange", { ctermfg = static.black, ctermbg = dark.yellow })
 hl("DiffDelete", { ctermfg = static.black, ctermbg = dark.red })
 hl("DiffText",   { ctermfg = static.black, ctermbg = dark.red })
 
-hl("Error", { ctermfg = static.white, ctermbg = dark.red })
-vim.cmd("highlight! link ErrorMsg Error")
-
-hl("Folded", { ctermfg = bright.cyan, ctermbg = static.grey })
-vim.cmd("highlight! link FoldColumn Folded")
-
-hl("NonText", { ctermfg = bright.black })
-vim.cmd("highlight! link SpecialKey NonText")
-
 hl("SpellBad",   { ctermfg = static.white, ctermbg = dark.red })
-hl("SpellCap",   { ctermfg = static.white, ctermbg = dark.blue })
-hl("SpellLocal", { ctermfg = static.white, ctermbg = dark.cyan })
+hl("SpellCap",   { ctermfg = static.white, ctermbg = dark.magenta })
+hl("SpellLocal", { ctermfg = static.white, ctermbg = dark.magenta })
 hl("SpellRare",  { ctermfg = static.white, ctermbg = dark.magenta })
+
+vim.cmd [[
+  highlight! link ErrorMsg    Error
+  highlight! link FoldColumn  Folded
+  highlight! link NormalFloat NONE
+  highlight! link SpecialKey  NonText
+
+  highlight! link Todo            Comment
+  highlight! link vimCommentTitle Comment
+]]
 
 --------------------
 -- Filetype: diff --
@@ -121,7 +120,7 @@ hl("diffLine",    { ctermfg = bright.cyan })
 hl("diffRemoved", { ctermfg = bright.red })
 
 vim.cmd [[
-  highlight link diffFile      NONE
-  highlight link diffIndexLine NONE
-  highlight link diffSubname   NONE
+  highlight! link diffFile      NONE
+  highlight! link diffIndexLine NONE
+  highlight! link diffSubname   NONE
 ]]
