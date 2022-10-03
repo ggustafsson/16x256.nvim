@@ -97,6 +97,9 @@ hl("DiffChange", { ctermfg = static.black, ctermbg = dark.yellow })
 hl("DiffDelete", { ctermfg = static.black, ctermbg = dark.red })
 hl("DiffText",   { ctermfg = static.black, ctermbg = dark.red })
 
+hl("NormalFloat", { ctermfg = static.white, ctermbg = static.grey })
+hl("PmenuSel",    { ctermfg = static.white, ctermbg = static.grey })
+
 hl("SpellBad",   { ctermfg = static.white, ctermbg = dark.red })
 hl("SpellCap",   { ctermfg = static.white, ctermbg = dark.magenta })
 hl("SpellLocal", { ctermfg = static.white, ctermbg = dark.magenta })
@@ -105,7 +108,6 @@ hl("SpellRare",  { ctermfg = static.white, ctermbg = dark.magenta })
 vim.cmd [[
   highlight! link ErrorMsg    Error
   highlight! link FoldColumn  Folded
-  highlight! link NormalFloat NONE
   highlight! link SpecialKey  NonText
 
   highlight! link Todo            Comment
