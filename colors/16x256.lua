@@ -1,4 +1,4 @@
--- 16x256.nvim - v0.0.2 WIP ALPHA BETA 2000
+-- 16x256.nvim - v0.0.3 WIP ALPHA BETA 2000
 --
 --     $$\   $$$$$$\             $$$$$$\  $$$$$$$\   $$$$$$\
 --   $$$$ | $$  __$$\           $$  __$$\ $$  ____| $$  __$$\
@@ -51,7 +51,7 @@ end
 ---------------------
 local static = {
   black = 16,  -- #000000
-  grey  = 240,
+  grey  = 238,
   tan   = 180, -- #d7af87
   white = 231, -- #ffffff
 }
@@ -97,8 +97,8 @@ hl("DiffChange", { ctermfg = static.black, ctermbg = dark.yellow })
 hl("DiffDelete", { ctermfg = static.black, ctermbg = dark.red })
 hl("DiffText",   { ctermfg = static.black, ctermbg = dark.red })
 
-hl("NormalFloat", { ctermfg = static.white, ctermbg = static.grey })
-hl("PmenuSel",    { ctermfg = static.white, ctermbg = static.grey })
+hl("Pmenu",    { ctermfg = static.white, ctermbg = static.grey })
+hl("PmenuSel", { ctermfg = static.black, ctermbg = bright.yellow })
 
 hl("SpellBad",   { ctermfg = static.white, ctermbg = dark.red })
 hl("SpellCap",   { ctermfg = static.white, ctermbg = dark.magenta })
@@ -106,9 +106,9 @@ hl("SpellLocal", { ctermfg = static.white, ctermbg = dark.magenta })
 hl("SpellRare",  { ctermfg = static.white, ctermbg = dark.magenta })
 
 vim.cmd [[
-  highlight! link ErrorMsg    Error
-  highlight! link FoldColumn  Folded
-  highlight! link SpecialKey  NonText
+  highlight! link ErrorMsg   Error
+  highlight! link FoldColumn Folded
+  highlight! link SpecialKey NonText
 
   highlight! link Todo            Comment
   highlight! link vimCommentTitle Comment
