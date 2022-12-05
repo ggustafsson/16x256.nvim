@@ -50,10 +50,11 @@ end
 -- Color Variables --
 ---------------------
 local static = {
-  black = 16,  -- #000000
-  grey  = 238,
-  tan   = 180, -- #d7af87
-  white = 231, -- #ffffff
+  black  = 16,  -- #000000
+  grey27 = 238, -- #444444
+  grey35 = 240, -- #585858
+  tan    = 180, -- #d7af87
+  white  = 231, -- #ffffff
 }
 local dark = {
   black   = 0,
@@ -81,13 +82,13 @@ local bright = {
 ---------------------
 hl("Comment",    { ctermfg = static.tan })
 hl("Error",      { ctermfg = static.white, ctermbg = dark.red })
-hl("Folded",     { ctermfg = bright.cyan, ctermbg = static.grey })
+hl("Folded",     { ctermfg = bright.cyan, ctermbg = static.grey27 })
 hl("MatchParen", { ctermbg = "none", cterm = "underline" })
 hl("NonText",    { ctermfg = bright.black })
 hl("Search",     { ctermfg = static.black, ctermbg = dark.yellow })
 hl("SignColumn", { ctermfg = bright.cyan, ctermbg = "none" })
-hl("VertSplit",  { cterm = "none", ctermfg = static.white })
-hl("Visual",     { ctermfg = static.white, ctermbg = static.grey })
+hl("VertSplit",  { ctermfg = static.white, cterm = "none" })
+hl("Visual",     { ctermfg = static.white, ctermbg = static.grey35 })
 
 hl("CursorLineNr", { ctermfg = bright.red, cterm = "none" })
 hl("LineNr",       { ctermfg = bright.black })
@@ -97,7 +98,7 @@ hl("DiffChange", { ctermfg = static.black, ctermbg = dark.yellow })
 hl("DiffDelete", { ctermfg = static.black, ctermbg = dark.red })
 hl("DiffText",   { ctermfg = static.black, ctermbg = dark.red })
 
-hl("Pmenu",    { ctermfg = static.white, ctermbg = static.grey })
+hl("Pmenu",    { ctermfg = static.white, ctermbg = static.grey27 })
 hl("PmenuSel", { ctermfg = static.black, ctermbg = bright.yellow })
 
 hl("SpellBad",   { ctermfg = static.white, ctermbg = dark.red })
