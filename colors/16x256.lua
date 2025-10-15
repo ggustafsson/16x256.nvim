@@ -1,4 +1,4 @@
--- 16x256.nvim - v0.0.3 WIP ALPHA BETA 2000
+-- 16x256.nvim - v0.0.4 WIP ALPHA BETA 2000
 --
 --     $$\   $$$$$$\             $$$$$$\  $$$$$$$\   $$$$$$\
 --   $$$$ | $$  __$$\           $$  __$$\ $$  ____| $$  __$$\
@@ -10,9 +10,6 @@
 --   \______|\______/ \__/  \__|\________| \______/  \______/
 --
 -- Nvim colorscheme that aims to be minimal, defaultish and wonderfully boring.
---
--- XXX: This will be hopefully be decommisioned after Nvim v0.9.0!
--- See roadmap: https://neovim.io/roadmap
 --
 -- Author: Göran Gustafsson <gustafsson.g@gmail.com>
 -- License: BSD 3-Clause
@@ -80,15 +77,16 @@ local bright = {
 ---------------------
 -- Highlight Rules --
 ---------------------
-hl("Comment",    { ctermfg = static.tan })
-hl("Error",      { ctermfg = static.white, ctermbg = dark.red })
-hl("Folded",     { ctermfg = bright.cyan, ctermbg = static.grey27 })
-hl("MatchParen", { ctermbg = "none", cterm = "underline" })
-hl("NonText",    { ctermfg = bright.black })
-hl("Search",     { ctermfg = static.black, ctermbg = dark.yellow })
-hl("SignColumn", { ctermfg = bright.cyan, ctermbg = "none" })
-hl("VertSplit",  { ctermfg = static.white, cterm = "none" })
-hl("Visual",     { ctermfg = static.white, ctermbg = static.grey35 })
+hl("Comment",      { ctermfg = static.tan })
+hl("Error",        { ctermfg = static.white, ctermbg = dark.red })
+hl("Folded",       { ctermfg = bright.cyan, ctermbg = static.grey27 })
+hl("MatchParen",   { ctermbg = "none", cterm = "underline" })
+hl("NonText",      { ctermfg = bright.black })
+hl("Search",       { ctermfg = static.black, ctermbg = dark.yellow })
+hl("SignColumn",   { ctermfg = bright.cyan, ctermbg = "none" })
+hl("StatusLineNC", { ctermfg = static.black, ctermbg = 248, cterm = "none" })
+hl("VertSplit",    { ctermfg = static.white, cterm = "none" })
+hl("Visual",       { ctermfg = static.white, ctermbg = static.grey35 })
 
 hl("CursorLineNr", { ctermfg = bright.red, cterm = "none" })
 hl("LineNr",       { ctermfg = bright.black })
