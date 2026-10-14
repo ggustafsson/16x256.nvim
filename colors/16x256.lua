@@ -1,4 +1,4 @@
--- 16x256.nvim - v0.0.5 WIP ALPHA BETA 2000
+-- 16x256.nvim - v0.0.6 WIP ALPHA BETA 2000
 --
 --     $$\   $$$$$$\             $$$$$$\  $$$$$$$\   $$$$$$\
 --   $$$$ | $$  __$$\           $$  __$$\ $$  ____| $$  __$$\
@@ -94,6 +94,10 @@ vim.cmd [[
 
   highlight! link Todo Comment
   highlight! link vimCommentTitle Comment
+
+  highlight! link ColorColumn Visual
+  highlight! link CursorColumn Visual
+  highlight! link CursorLine Visual
 ]]
 
 --------------------
