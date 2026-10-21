@@ -19,10 +19,10 @@
 -------------------
 vim.opt.background = "dark"
 vim.opt.termguicolors = false
-vim.cmd [[
+vim.cmd([[
   highlight clear
   syntax reset
-]]
+]])
 vim.g.colors_name = "16x256"
 
 ---------------------
@@ -87,7 +87,7 @@ vim.cmd.highlight("SpellCap", "ctermfg="..static.white, "ctermbg="..dark.magenta
 vim.cmd.highlight("SpellLocal", "ctermfg="..static.white, "ctermbg="..dark.magenta)
 vim.cmd.highlight("SpellRare", "ctermfg="..static.white, "ctermbg="..dark.magenta)
 
-vim.cmd [[
+vim.cmd([[
   highlight! link ErrorMsg Error
   highlight! link FoldColumn Folded
   highlight! link SpecialKey NonText
@@ -98,7 +98,7 @@ vim.cmd [[
   highlight! link ColorColumn Visual
   highlight! link CursorColumn Visual
   highlight! link CursorLine Visual
-]]
+]])
 
 --------------------
 -- Filetype: diff --
@@ -107,8 +107,8 @@ vim.cmd.highlight("diffAdded", "ctermfg="..bright.green)
 vim.cmd.highlight("diffLine", "ctermfg="..bright.cyan)
 vim.cmd.highlight("diffRemoved", "ctermfg="..bright.red)
 
-vim.cmd [[
+vim.cmd([[
   highlight! link diffFile NONE
   highlight! link diffIndexLine NONE
   highlight! link diffSubname NONE
-]]
+]])
