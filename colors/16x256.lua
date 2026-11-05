@@ -17,13 +17,17 @@
 -------------------
 -- Initial Setup --
 -------------------
-vim.opt.background = "dark"
-vim.opt.termguicolors = false
+vim.api.nvim_set_option_value("background", "dark", {})
+vim.api.nvim_set_option_value("termguicolors", false, {})
 vim.cmd([[
   highlight clear
   syntax reset
 ]])
 vim.g.colors_name = "16x256"
+
+local function highlight(name, attrs)
+  vim.api.nvim_set_hl(0, name, vim.tbl_extend("force", attrs, { update = true }))
+end
 
 ---------------------
 -- Color Variables --
@@ -60,55 +64,51 @@ local bright = {
 ---------------------
 -- Highlight Rules --
 ---------------------
-vim.cmd.highlight("Comment", "ctermfg="..static.tan)
-vim.cmd.highlight("Error", "ctermfg="..static.white, "ctermbg="..dark.red)
-vim.cmd.highlight("Folded", "ctermfg="..bright.cyan, "ctermbg="..static.grey27)
-vim.cmd.highlight("MatchParen", "ctermbg=none", "cterm=underline")
-vim.cmd.highlight("NonText", "ctermfg="..bright.black)
-vim.cmd.highlight("Search", "ctermfg="..static.black, "ctermbg="..dark.yellow)
-vim.cmd.highlight("SignColumn", "ctermfg="..bright.cyan, "ctermbg=none")
-vim.cmd.highlight("StatusLineNC", "ctermfg="..static.black, "ctermbg="..static.grey66, "cterm=none")
-vim.cmd.highlight("VertSplit", "ctermfg="..static.white, "cterm=none")
-vim.cmd.highlight("Visual", "ctermfg="..static.white, "ctermbg="..static.grey35)
+highlight("Comment", { ctermfg = static.tan })
+highlight("Error", { ctermfg = static.white, ctermbg = dark.red })
+highlight("Folded", { ctermfg = bright.cyan, ctermbg = static.grey27 })
+highlight("MatchParen", { ctermbg = "NONE", cterm = { underline = true } })
+highlight("NonText", { ctermfg = bright.black })
+highlight("Search", { ctermfg = static.black, ctermbg = dark.yellow })
+highlight("SignColumn", { ctermfg = bright.cyan, ctermbg = "NONE" })
+highlight("StatusLineNC", { ctermfg = static.black, ctermbg = static.grey66, cterm = {} })
+highlight("VertSplit", { ctermfg = static.white, cterm = {} })
+highlight("Visual", { ctermfg = static.white, ctermbg = static.grey35 })
 
-vim.cmd.highlight("CursorLineNr", "ctermfg="..bright.red, "cterm=none")
-vim.cmd.highlight("LineNr", "ctermfg="..bright.black)
+highlight("CursorLineNr", { ctermfg = bright.red, cterm = {} })
+highlight("LineNr", { ctermfg = bright.black })
 
-vim.cmd.highlight("DiffAdd", "ctermfg="..static.black, "ctermbg="..dark.green)
-vim.cmd.highlight("DiffChange", "ctermfg="..static.black, "ctermbg="..dark.yellow)
-vim.cmd.highlight("DiffDelete", "ctermfg="..static.black, "ctermbg="..dark.red)
-vim.cmd.highlight("DiffText", "ctermfg="..static.black, "ctermbg="..dark.red)
+highlight("DiffAdd", { ctermfg = static.black, ctermbg = dark.green })
+highlight("DiffChange", { ctermfg = static.black, ctermbg = dark.yellow })
+highlight("DiffDelete", { ctermfg = static.black, ctermbg = dark.red })
+highlight("DiffText", { ctermfg = static.black, ctermbg = dark.red })
 
-vim.cmd.highlight("Pmenu", "ctermfg="..static.white, "ctermbg="..static.grey27)
-vim.cmd.highlight("PmenuSel", "ctermfg="..static.black, "ctermbg="..bright.yellow)
+highlight("Pmenu", { ctermfg = static.white, ctermbg = static.grey27 })
+highlight("PmenuSel", { ctermfg = static.black, ctermbg = bright.yellow })
 
-vim.cmd.highlight("SpellBad", "ctermfg="..static.white, "ctermbg="..dark.red)
-vim.cmd.highlight("SpellCap", "ctermfg="..static.white, "ctermbg="..dark.magenta)
-vim.cmd.highlight("SpellLocal", "ctermfg="..static.white, "ctermbg="..dark.magenta)
-vim.cmd.highlight("SpellRare", "ctermfg="..static.white, "ctermbg="..dark.magenta)
+highlight("SpellBad", { ctermfg = static.white, ctermbg = dark.red })
+highlight("SpellCap", { ctermfg = static.white, ctermbg = dark.magenta })
+highlight("SpellLocal", { ctermfg = static.white, ctermbg = dark.magenta })
+highlight("SpellRare", { ctermfg = static.white, ctermbg = dark.magenta })
 
-vim.cmd([[
-  highlight! link ErrorMsg Error
-  highlight! link FoldColumn Folded
-  highlight! link SpecialKey NonText
+vim.api.nvim_set_hl(0, "ErrorMsg", { link = "Error" })
+vim.api.nvim_set_hl(0, "FoldColumn", { link = "Folded" })
+vim.api.nvim_set_hl(0, "SpecialKey", { link = "NonText" })
 
-  highlight! link Todo Comment
-  highlight! link vimCommentTitle Comment
+vim.api.nvim_set_hl(0, "Todo", { link = "Comment" })
+vim.api.nvim_set_hl(0, "vimCommentTitle", { link = "Comment" })
 
-  highlight! link ColorColumn Visual
-  highlight! link CursorColumn Visual
-  highlight! link CursorLine Visual
-]])
+vim.api.nvim_set_hl(0, "ColorColumn", { link = "Visual" })
+vim.api.nvim_set_hl(0, "CursorColumn", { link = "Visual" })
+vim.api.nvim_set_hl(0, "CursorLine", { link = "Visual" })
 
 --------------------
 -- Filetype: diff --
 --------------------
-vim.cmd.highlight("diffAdded", "ctermfg="..bright.green)
-vim.cmd.highlight("diffLine", "ctermfg="..bright.cyan)
-vim.cmd.highlight("diffRemoved", "ctermfg="..bright.red)
+highlight("diffAdded", { ctermfg = bright.green })
+highlight("diffLine", { ctermfg = bright.cyan })
+highlight("diffRemoved", { ctermfg = bright.red })
 
-vim.cmd([[
-  highlight! link diffFile NONE
-  highlight! link diffIndexLine NONE
-  highlight! link diffSubname NONE
-]])
+vim.api.nvim_set_hl(0, "diffFile", {})
+vim.api.nvim_set_hl(0, "diffIndexLine", {})
+vim.api.nvim_set_hl(0, "diffSubname", {})
